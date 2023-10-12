@@ -68,7 +68,7 @@ function ctrlClick() {
         textarea.textContent = textarea.textContent.slice(0, -1);
     } else {
         // If the button pressed is clear then delete all values in input and history
-        textarea.textContent = '';
+        textarea.textContent = '0';
         document.querySelector('.History').textContent = '';
     }
 }
@@ -89,7 +89,7 @@ function operatorClick() {
         // Add the input and operator to history
         history.textContent += textarea.textContent + ' ' + this.textContent + ' ';
         // Clear the input
-        textarea.textContent = '';
+        textarea.textContent = '0';
     } else if (history.textContent !== '' && this.textContent !== '=') {
         // If the history is not empty and the button pressed is not equals then enter
 
@@ -98,16 +98,19 @@ function operatorClick() {
         // Calculate the answer of the history and input and then add the operator to the history
         history.textContent = calculate(history.textContent) + ' ' + this.textContent + ' ';
         // Clear the input
-        textarea.textContent = '';
+        textarea.textContent = '0';
     } else {
         // If the button pressed is equals then enter
 
-        // Add the input to history
-        history.textContent += textarea.textContent;
-        // Calculate the answer of the history then put the answer in input
-        textarea.textContent = calculate(history.textContent);
-        // Clear the history
-        history.textContent = '';
+        // If history is empty then nothing needs to happen
+        if (history.textContent !== '') {
+            // Add the input to history
+            history.textContent += textarea.textContent;
+            // Calculate the answer of the history then put the answer in input
+            textarea.textContent = calculate(history.textContent);
+            // Clear the history
+            history.textContent = '';
+        }
     }
 }
 

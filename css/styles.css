@@ -1,6 +1,15 @@
 body {
-    background-color: beige;
-    padding: 100px;
+    background-color: rgb(95, 95, 95);
+
+}
+
+#Title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    color: white;
+    font-weight: bold;
 }
 
 #Calculator {
