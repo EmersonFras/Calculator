@@ -1,8 +1,12 @@
+body {
+    background-color: beige;
+    padding: 100px;
+}
+
 #Calculator {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: beige;
 }
 
 
