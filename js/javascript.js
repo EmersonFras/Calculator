@@ -24,21 +24,24 @@ btns.forEach(btn => btn.addEventListener('click', btnClick));
 // Find which button was clicked
 // Call separate function for each button
 function btnClick() {
+    // Switch between the different classes of buttons
     switch (this.className.split(' ')[0]) {
         case 'ctrl':
+            // Call the ctrl button method
             ctrlClick.call(this);
             break;
         case 'number':
+            // Call the number button method
             numberClick.call(this);
             break;
         case 'operator':
+            // Call the operator button method
             operatorClick.call(this);
             break;
     }
 }
 
 // Number Click
-// Add number to input text area
 function numberClick() {
     // Get text area of inputted numbers
     const textarea = document.querySelector('.Input');
@@ -56,8 +59,6 @@ function numberClick() {
 }
 
 // Ctrl Click
-// If delete than I need to delete the last value in input
-// If clear i need to delete all values in input and histroy
 function ctrlClick() {
     // Get the input text area
     const textarea = document.querySelector('.Input');
@@ -73,15 +74,6 @@ function ctrlClick() {
 }
 
 // Operator Click
-// Number currently in input needs added to history
-// Operator text content needs added to history after number
-// If text is in input then the previous steps need taken
-// If text is in history then call a function to calculate the answer
-// of the histroy and current input and put the answer in histroy with the next
-// operator
-// If there is no text then change the last operator in history
-// If equals is pressed then call a function to calculate the answer
-// then clear the history and put the answer in input
 function operatorClick() {
     // Get the input and history text areas
     const textarea = document.querySelector('.Input');
@@ -121,21 +113,29 @@ function operatorClick() {
 
 // Calculate
 function calculate() {
+    // Get the history text area
     const history = document.querySelector('.History');
     let answer;
+
+    // Switch on the operator in history
     switch (history.textContent.split(' ')[1]) {
         case '+':
+            // Calculate the answer of the history addition
             answer = parseFloat(history.textContent.split(' ')[0]) + parseFloat(history.textContent.split(' ')[2]);
             break;
         case '-':
+            // Calculate the answer of the history subtraction
             answer = parseFloat(history.textContent.split(' ')[0]) - parseFloat(history.textContent.split(' ')[2]);
             break;
         case '*':
+            // Calculate the answer of the history multiplication
             answer = parseFloat(history.textContent.split(' ')[0]) * parseFloat(history.textContent.split(' ')[2]);
             break;
         case '/':
+            // Calculate the answer of the history division
             answer = parseFloat(history.textContent.split(' ')[0]) / parseFloat(history.textContent.split(' ')[2]);
             break;
     }
+    // Return the answer
     return answer;
 }
