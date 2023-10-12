@@ -1,0 +1,117 @@
+#Calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+
+
+#Panel {
+    display: flex;
+    flex: auto;
+    background-color: #1C1C1C;
+    border-style: solid;
+    border-width: 4px;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 0 25px 0;
+    border-radius: 25px;
+    gap: 15px;
+}
+
+#Screen {
+    /* background-color: green; */
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+.ScreenText {
+    padding: 0 25px;
+    /* margin: 25px; */
+    flex: 1;
+    background-color: rgb(58, 58, 58);
+    color: white;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+
+.Input {
+    border-radius: 0 0 15px 15px;
+    border-color: black;
+    padding: 5px 25px 15px 0;
+    font-size: 25px;
+    border-style: solid;
+    border-width: 0 2px 2px 2px;
+}
+
+.History {
+    border-radius: 15px 15px 0 0;
+    border-style: solid;
+    border-width: 2px 2px 0 2px;
+    border-color: black;
+    padding: 25px 25px 0 0;
+}
+
+.row {
+    display: flex;
+    flex: auto;
+    gap: 15px;
+    padding: 0px 25px;
+    justify-content: space-evenly;
+}
+
+.operator{
+    background-color: #FF9500;
+}
+
+.number {
+    background-color: #505050;  
+}
+
+.ctrl {
+    background-color: #D4D4D2;
+    color: black;
+}
+
+btn {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+
+    border-style: solid;
+    border-width: 2px;
+    border-color: black;
+    color: white;
+}
+
+.number-panel btn {
+    border-radius: 15px;
+    
+    min-width: 50px;
+    min-height: auto;
+    aspect-ratio: 1/1;
+}
+
+.ctrl-panel .ctrl {
+    min-width: 125px;
+    min-height: auto;
+    border-radius: 15px;
+    aspect-ratio: 2/1;
+}
+
+
+.number-hover{
+    background-color: rgb(206, 203, 203);
+}
+
+
+.ctrl-hover{
+    background-color: rgb(200, 106, 106);
+}
+
+.operator-hover{
+    background-color: rgb(255, 188, 94);
+}
+
