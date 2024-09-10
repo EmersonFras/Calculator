@@ -7,7 +7,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 36px;
+    font-size: 24px;
     color: white;
     font-weight: bold;
 }
@@ -37,6 +37,7 @@ body {
     display: flex;
     flex-direction: column;
     padding: 25px;
+    min-height: 95.4px;
 }
 
 .ScreenText {
